@@ -1,0 +1,26 @@
+# Makefile for "sel" program, for GCC
+# By Martin Panter
+ 
+CC = gcc
+CFLAGS = -O2 -Wall
+#~ LINK = wlink
+#~ LINKFLAGS =
+
+EXENAME = sel
+#~ LIBS =
+#~ OBJS = main.o
+
+all: $(EXENAME).exe
+.PHONY: all
+
+#~ exec: .SYMBOLIC $(EXENAME).exe
+	#~ $(EXENAME).exe
+
+$(EXENAME).exe: main.c
+	$(CC) $(CFLAGS) -o $@ $<
+	strip $@
+
+#~ clean: .PROCEDURE
+	#~ FOR %o IN ($(OBJS)) DO @del %o
+	#~ del $(RESNAME).res
+	#~ del $(EXENAME).exe
