@@ -1,3 +1,16 @@
+/* Similar ideas:
+
+https://github.com/bagder/bcut
+
+Use Perl (or other scriptable language):
+open $file, '<', "<filename>";  # '>' for write; '+<' for modify
+binmode $file, ':bytes';
+sysseek ($file, $address, 0);
+sysread $file, my $buffer, 2;
+sysseek ($file, $address, 0);
+syswrite $file, <data>;
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
